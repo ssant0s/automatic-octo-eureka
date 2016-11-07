@@ -1,0 +1,60 @@
+/* css for table */
+table.tbl
+{   
+    border-collapse:collapse;
+    width:100%;
+    text-indent:1px;
+    margin:0;
+    padding: 0px;
+    border: 1px #D6E3C6 solid;
+    margin-bottom:10px;
+    text-decoration: none;
+
+    
+
+}
+table.tbl tr:nth-child(odd)		{ background-color:#eee; }
+table.tbl tr:nth-child(even)	{ background-color:#fff; }
+
+table.tbl td {padding: 4px;vertical-align:top; }
+table.tbl td {
+    border: 1px solid #dfdfdf;
+}
+table.no-border td{
+    border:0px;
+} 
+.unique{
+    width:auto;color: red;
+}
+
+
+/*
+Icons
+------------------------------------------------------------------- */
+
+.icon-delete{
+    background: url('../images/delete.png') no-repeat;
+    padding:0 0 5px 18px;
+}
+
+.icon-add{
+    background: url('../images/add.png') no-repeat;
+    padding:0 0 5px 18px;
+}
+.icon-delete{
+    background: url('../images/delete.png') no-repeat;
+    padding:0 0 5px 18px;
+}
+.icon-edit{
+    background: url('../images/edit.png') no-repeat;
+    padding:0 0 5px 18px;
+}
+.icon-view{
+    background: url('../images/view2.png') no-repeat;
+    padding:0 0 5px 18px;
+}
+
+
+
+
+
