@@ -36,11 +36,12 @@ class InterviewController extends Controller
         else{
         	$request->session()->flash('status','Data Faild td Add');
         }
-            return redirect('admin');
+            //return redirect('admin');
 
     }
 
-    public function addMarker(Request $request){
+    public function addMarker(){
+        echo "kata haris";
 
         return view('addMember');
 

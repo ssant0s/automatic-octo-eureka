@@ -27,7 +27,7 @@ Route::get('view/{id}','CandidateController@get_candidate_id')->name('view');
 Route::post('insert', 'CandidateController@insert_candidates')->name('insert');
 Route::get('add', 'CandidateController@show_page')->name('add');
 Route::get('admin','InterviewController@getCandidates');
-Route::post('status','InterviewController@actionStatus')->name('status');
+Route::post('statuss','InterviewController@actionStatus')->name('statuss');
 Route::post('addinterviewer','InterviewController@addMarker')->name('addinterviewer');
 Route::get('user','LeadController@getList');
 Route::get('addscore/{id}','LeadController@addMarks')->name('addscore');
