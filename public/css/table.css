@@ -53,8 +53,9 @@ Icons
     background: url('../images/view2.png') no-repeat;
     padding:0 0 5px 18px;
 }
+.message{
+    color: red;
 
-
-
+}
 
 

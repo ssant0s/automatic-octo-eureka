@@ -29,7 +29,7 @@ class CandidateController extends Controller
  		$name=$request->input('candidate-name');
         $lastname=$request->input('last-name');
         $middlename=$request->input('middle-name');
-        $phoneno=$request->input('phone_id');
+        $phoneno=$request->input('phone_no');
         $emailid=$request->input('email_id');
         $address=$request->input('address');
         $gender=$request->input('gender'); 

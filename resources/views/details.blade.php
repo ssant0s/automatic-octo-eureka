@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{{ 'css/table.css' }}"> 
 <table class="tbl">
       <tr>{{link_to_route('add', 'Add Candidate','',['class' => 'icon-add'])}}</tr> 
-      <tr><td><lable style="color: red;">{{ session('status') }}</lable></td></tr>
+      <tr><td class="message">{{ session('status') }}</td></tr>
      
      <tr class="unique"><td>First Name</td><td>last Name</td><td>Phone</td><td>Gender</td><td>Action</td></tr>
 				@foreach ($Candidates as $candidate)

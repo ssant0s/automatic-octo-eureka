@@ -2,6 +2,7 @@
  @section('content') 
 
 <table class="tbl">
+<tr><td class="message">{{ session('status')}}</td></tr>
      <tr class="unique"><td>First Name</td><td>Resume<td>Status</td><td>Action</td></tr>
 				@foreach ($Candidates as $candidate)
    				 <tr class="unique">

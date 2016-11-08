@@ -21,7 +21,7 @@ Route::get('reception','CandidateController@get_candidate');
 
 
 Route::get('grades','GradeController@get_score');
-Route::get('delete/{id}','CandidateContr@oller@delete_candidate')->name('delete');
+Route::get('delete/{id}','CandidateController@delete_candidate')->name('delete');
 Route::get('update/{id}','CandidateController@get_candidate_id')->name('update');
 Route::get('view/{id}','CandidateController@get_candidate_id')->name('view');
 Route::post('insert', 'CandidateController@insert_candidates')->name('insert');
@@ -30,7 +30,11 @@ Route::get('admin','InterviewController@getCandidates');
 Route::post('status','InterviewController@actionStatus')->name('status');
 Route::post('addinterviewer','InterviewController@addMarker')->name('addinterviewer');
 Route::get('user','LeadController@getList');
-Route::get('addscore','LeadController@addMarks')->name('addscore');
+Route::get('addscore/{id}','LeadController@addMarks')->name('addscore');
+Route::post('inserscore','LeadController@insertGrade')->name('inserscore');
+
+Route::get('scorelist','InterviewController@getGradecandidate');
+
 
 
   

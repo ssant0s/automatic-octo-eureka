@@ -18,7 +18,7 @@ class CreateCandidatesTable extends Migration
             $table->string('first_name',20);
             $table->string('middle_name',30);
             $table->string('last_name',30);
-            $table->integer('phone_no');
+            $table->string('phone_no',11);
             $table->string('email_id',20);
             $table->string('address',50);
             $table->string ('gender');

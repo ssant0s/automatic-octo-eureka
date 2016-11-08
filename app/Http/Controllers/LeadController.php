@@ -21,23 +21,23 @@ class LeadController extends Controller
 
 	}
 
-	public function addMarks(){
-		return view ('scoreCard');
+	public function addMarks($id){
+		return view ('scoreCard',['id' => $id]);
 	}
 
-	// public function insertGrade( Request $request){
-	// $grad=new Grade();
-	// $grad->candidate_id= $request->candidateid;
-	// $grad->user_id=$request->user_id;
-	// $grad->grade=$request->grade;
-	// $grad->feedback=$request->feebback;
-	// $query=$grad->save();
-	// if($query){
-	// 	echo "test pass";
-	// }
-	// else {
-	// 	echo "test feailed";
-	// }
+	public function insertGrade( Request $request){
+	$grad=new Grade();
+	$grad->candidate_id= $request->id;
+	$grad->user_id=2;
+	$grad->grade=$request->grade;
+	$grad->feedback=$request->feedback;
+	$query=$grad->save();
+	if($query){
+		$request->session()->flash('status',"Called ");	}
+	else {
+		$request->session()->flash('status','grades failed inserted');
+	}
+	   return redirect('user');
 
-	// }
+	}
 }
