@@ -22,30 +22,47 @@ class InterviewController extends Controller
    
     }
 
+
     public function actionStatus(Request $request){
-
-    	
-
-    	$insertStatus= new Sortlist;
-       $insertStatus->candidate_id = $request->id;
-       $insertStatus->status_id = $request->status;
-        $query=$insertStatus->save();
-        if($query){
-        	$request->session()->flash('status',"Called ");
-        }
-        else{
-        	$request->session()->flash('status','Data Faild td Add');
-        }
+           $request->session()->put('id',$request->id);
+            $request->session()->put('status',$request->id);
+            return view('addMember',['list'=> $request]);
+            $id = $request->session()->pull('id');
+            $status = $request->session()->pull('status');
+            $sortlist = Sortlist::add($id, $status,$request->Date,
+                $request->interviewerf);
+                if($sortlists ){
+        	           $request->session()->flash('status',"Called ");
+                         }
+                else{
+        	       $request->session()->flash('status','Data Faild td Add');
+                    }
             //return redirect('admin');
 
     }
 
-    public function addMarker(){
-        echo "kata haris";
 
-        return view('addMember');
+
+
+
+
+    public function addMarker(Request $request){
+        $this->actionStatus();
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public function getGradecandidate(){
         $list=DB::select('SELECT c.first_name, g.grade FROM `candidates` AS c 
