@@ -8,16 +8,16 @@ use App\Http\Requests;
 use App\Sortlist;
 use App\Grade;
 use DB;
+Use Session;
 
 class LeadController extends Controller
 {
+
 	public function getList(){
 		$id=2;
 		$test=new Sortlist();
 		$list=$test->getLists($id);
 	    return view('intevieweer',['list' =>  $list]);
-
-		
 
 	}
 

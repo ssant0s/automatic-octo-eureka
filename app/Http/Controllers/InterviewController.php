@@ -11,6 +11,7 @@ use App\Candidate;
 use App\Sortlist;
 
 use DB;
+use Session;
 
 
 class InterviewController extends Controller
@@ -24,25 +25,25 @@ class InterviewController extends Controller
 
 
     public function actionStatus(Request $request){
-           $request->session()->put('id',$request->id);
-            $request->session()->put('status',$request->id);
-            return view('addMember',['list'=> $request]);
-            $id = $request->session()->pull('id');
-            $status = $request->session()->pull('status');
-            $sortlist = Sortlist::add($id, $status,$request->Date,
-                $request->interviewerf);
-                if($sortlists ){
-        	           $request->session()->flash('status',"Called ");
+        if(isset($request->id) && isset($request->status)){
+                 $request->session()->put('id',$request->id);
+                 $request->session()->put('status',$request->status);
+           
+           return view('addMember');
+       }else{
+
+                  $id = $request->session()->pull('id');
+                   $status = $request->session()->pull('status');
+                   $sortlist = Sortlist::add($id, $status,$request->interviewerf,$request->Date);
+                        if($sortlist){
+        	               $request->session()->flash('stat',"Called ");
+                         }else{
+        	               $request->session()->flash('stat','Data Faild td Add');
                          }
-                else{
-        	       $request->session()->flash('status','Data Faild td Add');
-                    }
-            //return redirect('admin');
+            return redirect('admin');
+                }
 
     }
-
-
-
 
 
 
@@ -52,23 +53,8 @@ class InterviewController extends Controller
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     public function getGradecandidate(){
-        $list=DB::select('SELECT c.first_name, g.grade FROM `candidates` AS c 
-                                INNER JOIN`sortlists` AS s ON c.id= s.candidate_id 
-                                INNER JOIN `gardes` AS g ON s.candidate_id= g.candidate_id
-                                GROUP BY grade');
+       $list=Sortlist::displayGrade();
         return view('finalResult',['list' => $list]);
     }
 }

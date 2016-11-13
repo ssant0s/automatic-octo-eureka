@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.default')
  @section('content') 
 <link rel="stylesheet" href="{{ 'css/table.css' }}"> 
 
@@ -12,11 +12,6 @@
 	<tr>
 	<td>Date</td><td>{!!Form::text('Date')!!}</td>
 	</tr>
-	
-	 <input type="hidden" name="id" value="{{$list->id}}"></td>
-	
-	 <input type="hidden" name="status" value="{{$list->status}}"></td>
-
 	<tr>
 	<td>
 	{{Form::submit('Add')}}

@@ -8,10 +8,15 @@ use App\Http\Requests;
 
 use App\Candidate;
 
+use App\Sortlist;
+
 use DB;
 
+use Session;
+
 class CandidateController extends Controller
-{
+{  
+
 
  	public function get_candidate(){
         $Candidates= DB::table('Candidates')->Paginate(5);
@@ -72,11 +77,13 @@ class CandidateController extends Controller
     	->where('id','=',$id)->get();
     	return view('viewCandidate',['candidate_by_id'=>$candidate_by_id]);
     }
-    public function update_candidate($id){
-    	return view('addcandidate');
-    	$update=DB::table('Candidates')
-    	->where('id','=',$id)
-    	->update();
+   
+
+    public function getCalllist(){
+        $calllist = new Sortlist;
+       $list=$calllist->checkStatus();
+       return view('calllist',['list'=>$list]);
+
 
     }
 

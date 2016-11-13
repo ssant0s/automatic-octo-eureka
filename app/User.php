@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use DB;
 
 class User extends Authenticatable
 {
@@ -27,4 +28,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+   public static function checkAuth($email,$password){
+    
+
+    return DB::table('users')
+       ->where('email',[$email])
+       ->where('password',[$password])
+       ->get();
+
+   }
 }

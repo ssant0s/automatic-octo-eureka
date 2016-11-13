@@ -11,17 +11,17 @@ class usersTableSeeder extends Seeder
      */
     public function run()
     {
-        for($i=0;$i<10;$i++){
+       
 
         DB::table('users')->insert([
-            'name' => str_random(10),
-            'email' => str_random(10).'@gmail.com',
-            'password' => str_random(10),
-            'role'=>str_random(10),
+            'name' => 'sita',
+            'email' => 'asp@gmail.com',
+            'password' => '123456',
+            'role'=>'2',
 
 
             ]);
-    }
+   
 
     }
 }

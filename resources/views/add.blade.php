@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.default')
  @section('content') 
 
 
@@ -15,7 +15,8 @@
                        First Name
                            </td> 
                              <td>
-                            {!!Form::text('candidate-name');!!}
+                            <!-- {!!Form::text('candidate-name');!!} -->
+                             {{Form::text('candidate-name')}}
                           
                             </td>
                             </tr>

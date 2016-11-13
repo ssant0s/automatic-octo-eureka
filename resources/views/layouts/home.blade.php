@@ -1,4 +1,4 @@
-<!-- @extends('layouts.app')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -9,9 +9,18 @@
 
                 <div class="panel-body">
                     You are logged in!
+                    ;lsdf
+                    sdlkfs
+                    lknsdlfj
+                    sdlfsad;fl
+                    sdfjsd;fl
+                    dsjfsd;fl
+                    sdfksd;lfkl
+                    sdkf'sdlf
+					@yield('content')
                 </div>
             </div>
         </div>
     </div>
 </div>
-@endsection -->
+@endsection

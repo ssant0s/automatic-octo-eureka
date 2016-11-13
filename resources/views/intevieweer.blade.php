@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.default')
  @section('content') 
 
  <link rel="stylesheet" href="{{'css/table.css'}}">

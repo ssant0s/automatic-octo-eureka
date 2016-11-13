@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/addregister') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -64,6 +64,17 @@
                                     </span>
                                 @endif
                             </div>
+<div class="col-md-6">
+                                <input id="role-confirm" type="dr" class="form-control" name="password_confirmation" required>
+
+                                @if ($errors->has('role_confirmation'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('role_confirmation') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+
                         </div>
 
                         <div class="form-group">
