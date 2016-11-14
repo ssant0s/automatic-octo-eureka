@@ -18,7 +18,6 @@ class LoginController extends Controller
     }
 
     public function checkLogin(Request $request){
-
     
  	$list=User::checkAuth($request->email,$request->password);
                 if($list){

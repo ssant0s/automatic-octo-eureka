@@ -22,8 +22,15 @@ Route::group(['middleware'=>'checkuser'], function(){
 	
 
 });
+Route::group(['middleware'=>'checkadmin'], function(){
+	
+	Route::get('admin','InterviewController@getCandidates');
 
-Route::get('admin','InterviewController@getCandidates');
+});
+
+
+
+//Route::get('admin','InterviewController@getCandidates');
 	Route::get('reception','CandidateController@get_candidate');
 	Route::get('user','LeadController@getList');
 
