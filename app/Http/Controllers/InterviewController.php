@@ -16,6 +16,7 @@ use Session;
 
 class InterviewController extends Controller
 {
+   
     
     public function getCandidates(){
     	$Candidates= DB::table('Candidates')->get();

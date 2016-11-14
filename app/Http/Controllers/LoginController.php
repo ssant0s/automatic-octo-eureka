@@ -18,14 +18,16 @@ class LoginController extends Controller
     }
 
     public function checkLogin(Request $request){
+
     
  	$list=User::checkAuth($request->email,$request->password);
                 if($list){
                     foreach($list as $list);
-                    Session::put('role',$list->role);
-                }else{ 
-                    return redirect('login');
-        }
+                    Session::set('role',$list->role);
+                     Session::get('role');
+                }
+
+        
  
     }
 

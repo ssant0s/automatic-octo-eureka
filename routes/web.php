@@ -17,11 +17,17 @@
 
 
 Route::group(['middleware'=>'checkuser'], function(){
+	
 	Route::Post('check','LoginController@checkLogin');
-	Route::get('admin','InterviewController@getCandidates');
-	Route::get('reception','CandidateController@get_candidate');
+	
 
 });
+
+Route::get('admin','InterviewController@getCandidates');
+	Route::get('reception','CandidateController@get_candidate');
+	Route::get('user','LeadController@getList');
+
+
 
 
 Route::get('login','LoginController@index');
