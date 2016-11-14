@@ -30,6 +30,11 @@
 
 <body>
 
+<?php
+session_start();
+$role=Session::get('role');
+?>
+
 
     <div id="wrapper">
 

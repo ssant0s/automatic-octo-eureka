@@ -28,11 +28,20 @@ Route::group(['middleware'=>'checkadmin'], function(){
 
 });
 
+Route::group(['middleware'=>'checklead'], function(){
+	
+	Route::get('user','LeadController@getList');
 
+});
+
+Route::group(['middleware'=>'checkreception'], function(){
+	
+	Route::get('reception','CandidateController@get_candidate');
+});
 
 //Route::get('admin','InterviewController@getCandidates');
-	Route::get('reception','CandidateController@get_candidate');
-	Route::get('user','LeadController@getList');
+	//Route::get('reception','CandidateController@get_candidate');
+	//Route::get('user','LeadController@getList');
 
 
 
