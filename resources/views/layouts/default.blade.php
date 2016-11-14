@@ -45,26 +45,27 @@ $role=Session::get('role');
                     <p class="icon-logo">
                         Interview Management<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System </p>
                              
-                
+                @if($role==3)
                     </li>
                 <li>
 
                     <a href="{{ 'reception'}}">Candidate</a>
-                }
-                }
                 </li>
                 <li>
                     <a href="{{ 'callist'}}">Selected Candidate</a>
                 </li>
+                @elseif($role==1)
                 <li>
                     <a href="{{'admin'}}">Candidate List</a>
                 </li>
                 <li>
                     <a href="{{'scorelist'}}">Candidate Score</a>
                 </li>
+                @else
                 <li>
                     <a href="{{'user'}}">Interviewe</a>
                 </li>
+                @endif
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
