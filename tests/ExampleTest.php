@@ -19,7 +19,6 @@ class ExampleTest extends TestCase
     }
 
     public function testHomePage(){
-        echo "test";
         $response=$this->call('GET','login');
         var_dump($response->getContent());
 
