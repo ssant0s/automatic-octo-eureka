@@ -21,6 +21,5 @@ class ExampleTest extends TestCase
     public function testHomePage(){
         $response=$this->call('GET','login');
         var_dump($response->getContent());
-
     }
 }
