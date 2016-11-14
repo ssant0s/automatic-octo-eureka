@@ -19,17 +19,7 @@ class ExampleTest extends TestCase
     }
 
     public function testHomePage(){
-
-
         $response=$this->call('GET','login');
         var_dump($response->getContent());
-    }
-
-    public funtion testadmin(){
-        echo "Testing Admin Model of application";
-         //$resposne=$this->getContent());
-        var_dump($response->getContent);
-
-
     }
 }
