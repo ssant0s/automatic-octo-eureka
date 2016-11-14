@@ -1,13 +1,10 @@
 @extends('layouts.default')
  @section('content') 
- <link rel="stylesheet" href="{{ 'css/table.css' }}"> 
+
 
 @foreach ($candidate_by_id as $candidate)
-        
- 
- <table class="tbl">
-
-        <tr clas="unique">
+        <table class="tbl">
+         <tr clas="unique">
         </tr>
              
                        <tr>
@@ -85,6 +82,5 @@
         
     </table>
     @endforeach 
- 
-  
-  @endsection
+ <link rel="stylesheet" href="{{ 'css/table.css' }}"> 
+@endsection

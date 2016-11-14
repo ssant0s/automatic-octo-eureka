@@ -19,7 +19,9 @@ class InterviewController extends Controller
    
     
     public function getCandidates(){
-    	$Candidates= DB::table('Candidates')->get();
+    	$Candidates= DB::table('Candidates')
+      ->orderBy('id','desc')
+      ->Paginate(10);
     	return view('candidatelist', ['Candidates' =>  $Candidates]);
    
     }

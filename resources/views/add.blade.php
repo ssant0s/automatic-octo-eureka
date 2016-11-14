@@ -8,7 +8,7 @@
         <tr clas="unique">
            <!-- <td>{!!Form::hidden('id');!!}</td> -->
         </tr>
-             
+              
         
                        <tr>
                        <td >
@@ -16,7 +16,7 @@
                            </td> 
                              <td>
                             <!-- {!!Form::text('candidate-name');!!} -->
-                             {{Form::text('candidate-name')}}
+                             {{Form::text('candidate-name')}} 
                           
                             </td>
                             </tr>

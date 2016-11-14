@@ -13,7 +13,14 @@ class ExampleTest extends TestCase
      */
     public function testBasicExample()
     {
+
         $this->visit('/')
              ->see('Laravel');
+    }
+
+    public function testHomePage(){
+        $response=$this->call('GET','login');
+        var_dump($response->getContent());
+
     }
 }

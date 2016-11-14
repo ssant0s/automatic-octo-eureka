@@ -10,6 +10,8 @@ use App\Candidate;
 
 use App\Sortlist;
 
+use Validator;
+
 use DB;
 
 use Session;
@@ -19,16 +21,29 @@ class CandidateController extends Controller
 
 
  	public function get_candidate(){
-        $Candidates= DB::table('Candidates')->Paginate(5);
-        return view('details', ['Candidates' =>  $Candidates]);
-		
+            $Candidates= DB::table('Candidates')
+            ->orderBy('id','desc')
+            ->Paginate(10);
+            return view('details', ['Candidates' =>  $Candidates]);
+    		
  	}
 
  	public function show_page(){
- 		return view('add');
+     		return view('add');
  	}
 
  	public function insert_candidates(Request $request){
+
+         $this->validate($request, [
+            'candidate-name' => 'required',
+            'last-name' => 'required',
+            'middle-name' => 'required',
+            'phone_no' => 'required',
+            'file-name' => 'required',
+            'address' => 'required',
+            'gender' => 'required',
+            
+    ]);
 
  
  		$name=$request->input('candidate-name');
@@ -40,18 +55,17 @@ class CandidateController extends Controller
         $gender=$request->input('gender'); 
         $path=$request->file('file-name')->store('uploads');
         $query= DB::table('Candidates')->insert(['first_name' => $name,'last_name'=>$lastname,'photo'=>$path,'middle_name'=>$middlename,'phone_no'=>$phoneno,'email_id'=>$emailid,'address'=>$address,'gender'=>$gender]);
-       // if(intval($query->Total)>0)
-       if($query)
-        {
- 		$request->session()->flash('status', 'Data Added Successfully!');
-}
+           if($query)
+            {
+     		$request->session()->flash('status', 'Data Added Successfully!');
+    }
 
-    else{
-        $request->session()->flash('status', 'Insertion Failde!');
-    }
-       return redirect('reception');
-    }
- 		
+        else{
+            $request->session()->flash('status', 'Insertion Failde!');
+        }
+           return redirect('reception');
+        }
+     		
 
 
  

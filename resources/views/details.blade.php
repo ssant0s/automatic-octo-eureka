@@ -18,13 +18,13 @@
    				 <td>{{link_to_route('delete', '', [$candidate->id],['class' => 'icon-delete'])}}||
                 {{link_to_route('update', '', [$candidate->id],['class' => 'icon-edit'])}} ||
                 {{link_to_route('view','',[$candidate->id],['class' => 'icon-view'])}}  </td>
-
-   				 
-   				 
-   				 </tr>
+          </tr>
  
 
 				@endforeach
+        <tr class="unique"><td colspan="5">
+        {{ $Candidates->links() }}</td>
+        </tr>
 
    </table>
    @endsection

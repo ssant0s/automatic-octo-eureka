@@ -22,6 +22,10 @@
  
 
 				@endforeach
+
+        <tr class="unique"><td colspan="5">
+        {{ $Candidates->links() }}</td>
+        </tr>
    </table>
 
 

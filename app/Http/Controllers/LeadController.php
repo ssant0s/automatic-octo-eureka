@@ -16,7 +16,7 @@ class LeadController extends Controller
 	public function getList(){
 		$id=2;
 		$test=new Sortlist();
-		$list=$test->getLists($id);
+		$list=$test->checkStatus($id);
 	    return view('intevieweer',['list' =>  $list]);
 
 	}
