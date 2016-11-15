@@ -10,7 +10,6 @@
                 <td> {{link_to_route('update', 'CV', [$candidate->id],['class' => 'icon-view'])}}   </td>
                 
                    {!! Form::open(['url' => 'statuss']) !!}
-                   <!-- {{Form::hidden('id', $candidate->id)}} -->
                    <input type="hidden" name="id" value="{{$candidate->id}}">
                    <td> {{Form::select('status', array('1' => 'Pending', '2' => 'Call'), 'status')}}</td>
                     <td>{{Form::submit('Add')}}
