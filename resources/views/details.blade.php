@@ -11,7 +11,6 @@
 				@foreach ($Candidates as $candidate)
    				 <tr class="unique">
    				 <td> {{ $candidate->first_name }}</td>
-           <!-- <td> {!!$candidate->first_name !!}</td> -->
    				 <td>{{ $candidate->last_name }}</td>
    				 <td>{{ $candidate->phone_no }}</td>
    				 <td>{{ $candidate->gender }}</td>
