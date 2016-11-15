@@ -44,6 +44,14 @@ Route::group(['middleware'=>'checkreception'], function(){
 	//Route::get('user','LeadController@getList');
 
 
+Route::get('password',function(){
+	echo "under construction";
+});
+
+Route::get('registers',function(){
+	echo "under construction";
+});
+
 
 
 Route::get('login','LoginController@index');

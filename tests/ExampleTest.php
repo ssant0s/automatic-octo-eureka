@@ -22,4 +22,5 @@ class ExampleTest extends TestCase
         $response=$this->call('GET','login');
         var_dump($response->getContent());
     }
+
 }
