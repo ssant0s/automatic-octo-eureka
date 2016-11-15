@@ -6,7 +6,6 @@
  <table class="tbl">
 
         <tr clas="unique">
-           <!-- <td>{!!Form::hidden('id');!!}</td> -->
         </tr>
               
         
@@ -15,7 +14,6 @@
                        First Name
                            </td> 
                              <td>
-                            <!-- {!!Form::text('candidate-name');!!} -->
                              {{Form::text('candidate-name')}} 
                           
                             </td>
