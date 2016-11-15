@@ -1,4 +1,4 @@
-@extends('layouts.default')
+ @extends('layouts.default')
  @section('content') 
 <link rel="stylesheet" href="{{ 'css/table.css' }}"> 
 
@@ -21,4 +21,4 @@
    {!! Form::close()!!}
 
 
-@endsection
+@endsection 

@@ -1,5 +1,6 @@
 @extends('layouts.default')
-@section('content')
+ @section('content') 
+ <link rel="stylesheet" href="{{ 'css/table.css' }}"> 
 			
 			<table class ="tbl">
 			{!! Form::open(['url' => 'inserscore', 'files' => true]) !!}
@@ -10,6 +11,6 @@
 			{!!Form::close()!!}
 
 			</table>
-			<link rel="stylesheet" href="{{ 'css/table.css' }}"> 
+			
 
-@endsection
+ @endsection
