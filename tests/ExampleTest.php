@@ -14,12 +14,12 @@ class ExampleTest extends TestCase
     public function testBasicExample()
 {
     $this->WithoutMiddleware();
-    $this->visit('/check')
+    $this->visit('check')
          ->type('admin@gmail.com','email')
          ->type('123456','password')
          ->press('submit')
-         ->seeRouteIs('/login');
-}
+         ->seeViewIs('admin');
+ }
 
 
 

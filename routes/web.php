@@ -54,6 +54,8 @@ Route::get('registers',function(){
 
 
 
+
+
 Route::get('login','LoginController@index');
 //Route::Post('check','LoginController@checkLogin');
 Route::get('logout','LoginController@logout');
@@ -86,6 +88,8 @@ Route::get('scorelist','InterviewController@getGradecandidate');
 
 
 Route::get('callist','CandidateController@getCalllist');
+
+Route::get('checkid/{id}','InterviewController@checkId')->name('checkid');
 
 
   

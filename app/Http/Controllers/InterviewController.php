@@ -59,6 +59,10 @@ class InterviewController extends Controller
        $list=Sortlist::displayGrade();
         return view('finalResult',['list' => $list]);
     }
+
+    public function checkId(){
+      dd('testijng');
+    }
 }
 
 

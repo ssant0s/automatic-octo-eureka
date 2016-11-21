@@ -1,5 +1,29 @@
 @extends('layouts.default')
  @section('content') 
+ <script src="js/jquery.js"></script>
+ <script>
+ function hideBlur($id){
+   var id = $id;
+     $.ajax({  
+                        type: 'GET',
+                        url: 'checkid',
+                        data: "id="+id,
+                        success: function(msg){
+                            if(msg=="true")
+                            {   
+                              console.log("already added");
+                        
+                            }
+                            else
+                            {
+                                console.log("you are allow to add");
+                            }
+                        }
+                            
+                    });
+
+ }
+</script>
 
 <table class="tbl">
 <tr><td class="message">{{ session('stat')}}</td></tr>
@@ -12,12 +36,12 @@
                    {!! Form::open(['url' => 'statuss']) !!}
                    <input type="hidden" name="id" value="{{$candidate->id}}">
                    <td> {{Form::select('status', array('1' => 'Pending', '2' => 'Call'), 'status')}}</td>
-                    <td>{{Form::submit('Add')}}
+                    <td><button type="button" id='add' onclick="hideBlur(<?= $candidate->id ?>)">Add</button></td>
    				          
                     {!!Form::close()!!}
    				 
    				 
-   				 </tr>
+   				 </tr>}
  
 
 				@endforeach
