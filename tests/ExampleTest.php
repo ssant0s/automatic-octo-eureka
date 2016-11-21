@@ -12,15 +12,21 @@ class ExampleTest extends TestCase
      * @return void
      */
     public function testBasicExample()
-    {
+{
+    $this->WithoutMiddleware();
+    $this->visit('/check')
+         ->type('admin@gmail.com','email')
+         ->type('123456','password')
+         ->press('submit')
+         ->seeRouteIs('/login');
+}
 
-        $this->visit('/')
-             ->see('Laravel');
-    }
 
-    public function testHomePage(){
-        $response=$this->call('GET','login');
-        var_dump($response->getContent());
-    }
+
+public function loginTest(){
+    dd('checkpoint 2');
+}
+   
+
 
 }

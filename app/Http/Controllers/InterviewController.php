@@ -11,6 +11,7 @@ use App\Candidate;
 use App\Sortlist;
 
 use DB;
+
 use Session;
 
 
@@ -18,16 +19,14 @@ class InterviewController extends Controller
 {
    
     
-    public function getCandidates(){
-    	$Candidates= DB::table('Candidates')
-      ->orderBy('id','desc')
-      ->Paginate(10);
-    	return view('candidatelist', ['Candidates' =>  $Candidates]);
+  public function getCandidates(){
+    $Candidates= Candidate::get_candidates();
+    return view('candidatelist', ['Candidates' =>  $Candidates]);
    
     }
 
 
-    public function actionStatus(Request $request){
+  public function actionStatus(Request $request){
         if(isset($request->id) && isset($request->status)){
                  $request->session()->put('id',$request->id);
                  $request->session()->put('status',$request->status);

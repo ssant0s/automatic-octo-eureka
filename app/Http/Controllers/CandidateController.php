@@ -21,15 +21,13 @@ class CandidateController extends Controller
 
 
  	public function get_candidate(){
-            $Candidates= DB::table('Candidates')
-            ->orderBy('id','desc')
-            ->Paginate(10);
-            return view('details', ['Candidates' =>  $Candidates]);
+       $Candidates= Candidate::get_candidates();
+        return view('details', ['Candidates' =>  $Candidates]);
     		
  	}
 
  	public function show_page(){
-     		return view('add');
+ 		return view('add');
  	}
 
  	public function insert_candidates(Request $request){
