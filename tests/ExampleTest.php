@@ -13,7 +13,7 @@ class ExampleTest extends TestCase
      */
     public function testBasicExample()
 {
-
+    $this->WithoutMiddleware();
     $this->visit('/check')
          ->type('admin@gmail.com','email')
          ->type('123456','password')
@@ -21,9 +21,10 @@ class ExampleTest extends TestCase
          ->seeRouteIs('/login');
 }
 
-public function loginTest(){
 
-   // dd('checkpoint 2');
+
+public function loginTest(){
+    dd('checkpoint 2');
 }
    
 
