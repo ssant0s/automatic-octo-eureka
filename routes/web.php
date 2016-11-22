@@ -89,7 +89,7 @@ Route::get('scorelist','InterviewController@getGradecandidate');
 
 Route::get('callist','CandidateController@getCalllist');
 
-Route::get('checkid/{id}','InterviewController@checkId')->name('checkid');
+Route::get('checkid','InterviewController@checkId')->name('checkid');
 
 
   

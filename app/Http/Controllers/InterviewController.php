@@ -60,8 +60,12 @@ class InterviewController extends Controller
         return view('finalResult',['list' => $list]);
     }
 
-    public function checkId(){
-      dd('testijng');
+    public function checkId(Request $request){
+        $id=$request->id;
+        $data=DB::table('sortlists')
+                       ->where('candidate_id',$id)
+                       ->where('status_id',2);
+       return response()->json([$data]);
     }
 }
 

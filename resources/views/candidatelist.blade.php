@@ -7,9 +7,9 @@
      $.ajax({  
                         type: 'GET',
                         url: 'checkid',
-                        data: "id="+id,
-                        success: function(msg){
-                            if(msg=="true")
+                        data: {'id':id},
+                        success: function(data){
+                            if(data)
                             {   
                               console.log("already added");
                         
